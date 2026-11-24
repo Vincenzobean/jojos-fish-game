@@ -60,8 +60,9 @@ stand to the inventory, **F2** floats a target dummy in front of you (Shift+F2 c
 toggles whether they punch back), **F3** gives 5 skill points and **F4** refunds every skill tree.
 They're left out of the exported game.
 
-Progress (story flags, skill points) is saved to Godot's user data folder,
-`%APPDATA%\Godot\app_userdata\JoJo's Fish game\` on Windows.
+Progress (story flags, skill points) and settings are saved to `%APPDATA%\JoJosFishGame\` by the
+exported game. Runs from the editor use Godot's default folder,
+`%APPDATA%\Godot\app_userdata\JoJo's Fish game\`, so testing in the editor never touches a real save.
 
 ## Credits
 
