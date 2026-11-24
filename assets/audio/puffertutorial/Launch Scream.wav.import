@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c7bheldl2k052"
+path="res://.godot/imported/Launch Scream.wav-7d804370ec66c2f4c28d52e7f98392c2.sample"
+
+[deps]
+
+source_file="res://assets/audio/puffertutorial/Launch Scream.wav"
+dest_files=["res://.godot/imported/Launch Scream.wav-7d804370ec66c2f4c28d52e7f98392c2.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

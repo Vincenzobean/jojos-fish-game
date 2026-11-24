@@ -1,0 +1,21 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+*.translation
+export_credentials.cfg
+
+# Build output
+/build/
+*.exe
+*.pck
+*.zip
+
+# Skybox: Sketchfab Standard license doesn't allow redistributing the raw files (see README).
+# Its license.txt and .import files stay tracked so resource UIDs match once it's downloaded.
+/assets/Enviornments/skybox_skydays_3/scene.gltf
+/assets/Enviornments/skybox_skydays_3/scene.bin
+/assets/Enviornments/skybox_skydays_3/textures/*.png
+
+# OS / editor
+.DS_Store
+Thumbs.db

@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://d1a7brwt2rwp1"]
+
+[ext_resource type="PackedScene" uid="uid://ww01cox3agp1" path="res://scenes/player.tscn" id="1_player"]
+[ext_resource type="PackedScene" uid="uid://c3tv2jde17l4a" path="res://assets/Enviornments/skybox_skydays_3/scene.gltf" id="5_sky"]
+[ext_resource type="Script" uid="uid://buidcm5xio7hb" path="res://Scripts/World/island_field.gd" id="6_islands"]
+[ext_resource type="PackedScene" path="res://scenes/water.tscn" id="7_water"]
+[ext_resource type="PackedScene" path="res://scenes/pause_menu.tscn" id="9_pause"]
+
+[sub_resource type="Environment" id="Environment_sky"]
+background_mode = 1
+background_color = Color(0.5, 0.7, 0.9, 1)
+ambient_light_source = 2
+ambient_light_color = Color(0.6, 0.6, 0.6, 1)
+
+[node name="World" type="Node3D" unique_id=444668900]
+
+[node name="Environment" type="WorldEnvironment" parent="." unique_id=114130250]
+environment = SubResource("Environment_sky")
+
+[node name="Sun" type="DirectionalLight3D" parent="." unique_id=500565263]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 5, 0)
+
+[node name="Player" parent="." unique_id=1887726072 instance=ExtResource("1_player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+speed = 8.0
+acceleration = 32.0
+friction = 24.0
+jump_velocity = 3.0
+
+[node name="Skybox" parent="." unique_id=1711090136 instance=ExtResource("5_sky")]
+transform = Transform3D(0.006, 0, 0, 0, 0.006, 0, 0, 0, 0.006, 0, 0, 0)
+
+[node name="Islands" type="Node3D" parent="." unique_id=169389387]
+script = ExtResource("6_islands")
+
+[node name="Water" parent="." unique_id=1699771991 instance=ExtResource("7_water")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+
+[node name="PauseMenu" parent="." unique_id=578131322 instance=ExtResource("9_pause")]

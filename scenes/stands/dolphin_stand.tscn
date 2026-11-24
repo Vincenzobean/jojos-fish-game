@@ -1,0 +1,40 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/stand_body.tscn" id="1_body"]
+[ext_resource type="Script" path="res://Scripts/Stands/Animation/Sets/dolphin_stand_animations.gd" id="2_animations"]
+[ext_resource type="Script" path="res://Scripts/Stands/floating_companion.gd" id="3_companion"]
+[ext_resource type="Script" path="res://Scripts/Stands/pufferfish_model.gd" id="4_pufferfish"]
+[ext_resource type="Script" path="res://Scripts/Stands/Combat/Sets/dolphin_stand_moves.gd" id="5_moves"]
+[ext_resource type="Script" path="res://Scripts/Stands/Finisher/dolphin_stand_finisher.gd" id="6_finisher"]
+[ext_resource type="Script" path="res://Scripts/Skills/dolphin_stand_skill_tree.gd" id="7_skills"]
+
+[sub_resource type="Resource" id="Resource_dolphin_moves"]
+script = ExtResource("5_moves")
+
+[sub_resource type="Resource" id="Resource_dolphin_animations"]
+script = ExtResource("2_animations")
+
+[sub_resource type="Resource" id="Resource_dolphin_finisher"]
+script = ExtResource("6_finisher")
+
+[sub_resource type="Resource" id="Resource_dolphin_skills"]
+script = ExtResource("7_skills")
+
+[node name="DolphinStand" instance=ExtResource("1_body")]
+animations = SubResource("Resource_dolphin_animations")
+moves = SubResource("Resource_dolphin_moves")
+finisher = SubResource("Resource_dolphin_finisher")
+skill_tree = SubResource("Resource_dolphin_skills")
+head_style = 1
+dorsal_fin = true
+skin = Color(0.46, 0.56, 0.67, 1)
+definition = Color(0.26, 0.33, 0.42, 1)
+eyes = Color(0.05, 0.06, 0.09, 1)
+underside = Color(0.86, 0.9, 0.94, 1)
+metadata/tutorial = true
+
+[node name="Pufferfish" type="Node3D" parent="." index="1"]
+script = ExtResource("3_companion")
+
+[node name="Model" type="MeshInstance3D" parent="Pufferfish"]
+script = ExtResource("4_pufferfish")

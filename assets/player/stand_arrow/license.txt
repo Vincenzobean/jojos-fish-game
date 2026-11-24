@@ -1,0 +1,11 @@
+Model Information:
+* title:	Stand Arrow
+* source:	https://sketchfab.com/3d-models/stand-arrow-282d0888d586437795d471ee6c7f7bdd
+* author:	Retro5865 (https://sketchfab.com/Retro5865)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Stand Arrow" (https://sketchfab.com/3d-models/stand-arrow-282d0888d586437795d471ee6c7f7bdd) by Retro5865 (https://sketchfab.com/Retro5865) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

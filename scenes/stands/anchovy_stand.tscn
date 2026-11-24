@@ -1,0 +1,37 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/stand_body.tscn" id="1_body"]
+[ext_resource type="Script" path="res://Scripts/Stands/Animation/Sets/dolphin_stand_animations.gd" id="2_animations"]
+[ext_resource type="Script" path="res://Scripts/Stands/Combat/Sets/anchovy_stand_moves.gd" id="3_moves"]
+[ext_resource type="Script" path="res://Scripts/Skills/anchovy_stand_skill_tree.gd" id="4_skills"]
+[ext_resource type="Script" path="res://Scripts/Stands/Cutscene/anchovy_stand_clash.gd" id="5_clash"]
+
+[sub_resource type="Resource" id="Resource_anchovy_moves"]
+script = ExtResource("3_moves")
+
+[sub_resource type="Resource" id="Resource_anchovy_animations"]
+script = ExtResource("2_animations")
+
+[sub_resource type="Resource" id="Resource_anchovy_skills"]
+script = ExtResource("4_skills")
+
+[sub_resource type="Resource" id="Resource_anchovy_clash"]
+script = ExtResource("5_clash")
+
+[node name="AnchovyStand" instance=ExtResource("1_body")]
+body_scale = 0.75
+animations = SubResource("Resource_anchovy_animations")
+moves = SubResource("Resource_anchovy_moves")
+max_health = 80.0
+skill_tree = SubResource("Resource_anchovy_skills")
+clash = SubResource("Resource_anchovy_clash")
+fly_speed_scale = 1.4
+dash_cooldown_scale = 0.6
+damage_scale = 0.65
+dash_evades = true
+head_style = 2
+dorsal_fin = true
+skin = Color(0.62, 0.7, 0.78, 1)
+definition = Color(0.2, 0.3, 0.42, 1)
+eyes = Color(0.05, 0.06, 0.09, 1)
+underside = Color(0.88, 0.92, 0.96, 1)

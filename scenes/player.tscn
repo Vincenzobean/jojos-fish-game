@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://ww01cox3agp1"]
+
+[ext_resource type="Script" uid="uid://dulbs2u57jnbf" path="res://Scripts/Player/player.gd" id="1_player"]
+[ext_resource type="PackedScene" uid="uid://0fcucsbo6r0j" path="res://scenes/held_bow.tscn" id="2_bow"]
+
+[ext_resource type="Script" path="res://Scripts/UI/crosshair.gd" id="3_crosshair"]
+[ext_resource type="Script" path="res://Scripts/Player/inventory.gd" id="4_inventory"]
+[ext_resource type="Script" path="res://Scripts/Player/possession.gd" id="5_possession"]
+[ext_resource type="Script" path="res://Scripts/Player/possession_visuals.gd" id="6_possession_visuals"]
+[ext_resource type="PackedScene" path="res://scenes/inventory_screen.tscn" id="7_inventory_screen"]
+[ext_resource type="Script" path="res://Scripts/UI/stand_hud.gd" id="10_stand_hud"]
+[ext_resource type="Script" path="res://Scripts/Player/stand_ride.gd" id="11_stand_ride"]
+[ext_resource type="Script" path="res://Scripts/Player/stand_ride_visuals.gd" id="12_stand_ride_visuals"]
+[ext_resource type="Script" path="res://Scripts/UI/skill_screen.gd" id="13_skill_screen"]
+[ext_resource type="Script" path="res://Scripts/Player/stand_encounter.gd" id="15_stand_encounter"]
+[ext_resource type="Script" path="res://Scripts/Player/stand_encounter_visuals.gd" id="16_stand_encounter_visuals"]
+[ext_resource type="Script" path="res://Scripts/Player/tutorial.gd" id="17_tutorial"]
+[ext_resource type="Script" path="res://Scripts/UI/level_hud.gd" id="18_level_hud"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pill"]
+radius = 0.4
+height = 1.6
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_pill"]
+radius = 0.4
+height = 1.6
+
+[node name="Player" type="CharacterBody3D" unique_id=221608650]
+script = ExtResource("1_player")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1397645973]
+shape = SubResource("CapsuleShape3D_pill")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1153384921]
+mesh = SubResource("CapsuleMesh_pill")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=356828162]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+
+[node name="HeldBow" parent="Camera3D" unique_id=27377166 instance=ExtResource("2_bow")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, -0.19999999, -0.41220504)
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Crosshair" type="Control" parent="HUD"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("3_crosshair")
+
+[node name="Inventory" type="Node" parent="." node_paths=PackedStringArray("fishing")]
+script = ExtResource("4_inventory")
+fishing = NodePath("../Camera3D/HeldBow/Fishing")
+
+[node name="Possession" type="Node" parent="." node_paths=PackedStringArray("inventory", "bow")]
+script = ExtResource("5_possession")
+inventory = NodePath("../Inventory")
+bow = NodePath("../Camera3D/HeldBow")
+
+[node name="Visuals" type="Node" parent="Possession"]
+script = ExtResource("6_possession_visuals")
+
+[node name="StandHud" type="Node" parent="Possession"]
+script = ExtResource("10_stand_hud")
+
+[node name="StandRide" type="Node" parent="."]
+script = ExtResource("11_stand_ride")
+
+[node name="Visuals" type="Node" parent="StandRide"]
+script = ExtResource("12_stand_ride_visuals")
+
+[node name="StandEncounter" type="Node" parent="." node_paths=PackedStringArray("inventory", "possession", "bow", "fishing")]
+script = ExtResource("15_stand_encounter")
+inventory = NodePath("../Inventory")
+possession = NodePath("../Possession")
+bow = NodePath("../Camera3D/HeldBow")
+fishing = NodePath("../Camera3D/HeldBow/Fishing")
+
+[node name="Visuals" type="Node" parent="StandEncounter"]
+script = ExtResource("16_stand_encounter_visuals")
+
+[node name="Tutorial" type="Node" parent="." node_paths=PackedStringArray("bow", "fishing")]
+script = ExtResource("17_tutorial")
+bow = NodePath("../Camera3D/HeldBow")
+fishing = NodePath("../Camera3D/HeldBow/Fishing")
+[node name="InventoryScreen" parent="." node_paths=PackedStringArray("inventory", "possession") instance=ExtResource("7_inventory_screen")]
+inventory = NodePath("../Inventory")
+possession = NodePath("../Possession")
+
+[node name="SkillScreen" type="CanvasLayer" parent="." node_paths=PackedStringArray("inventory", "possession")]
+process_mode = 3
+layer = 41
+script = ExtResource("13_skill_screen")
+inventory = NodePath("../Inventory")
+possession = NodePath("../Possession")
+
+[node name="LevelHud" type="Node" parent="."]
+script = ExtResource("18_level_hud")

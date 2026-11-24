@@ -1,0 +1,18 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://Scripts/UI/title_screen.gd" id="1_title"]
+[ext_resource type="PackedScene" uid="uid://d1a7brwt2rwp1" path="res://scenes/world.tscn" id="2_world"]
+[ext_resource type="Script" path="res://Scripts/UI/title_screen_visuals.gd" id="3_visuals"]
+
+[node name="TitleScreen" type="Node3D"]
+script = ExtResource("1_title")
+
+[node name="World" parent="." instance=ExtResource("2_world")]
+
+[node name="OrbitCamera" type="Camera3D" parent="."]
+fov = 60.0
+far = 4000.0
+
+[node name="Visuals" type="Node" parent="." node_paths=PackedStringArray("orbit_camera")]
+script = ExtResource("3_visuals")
+orbit_camera = NodePath("../OrbitCamera")

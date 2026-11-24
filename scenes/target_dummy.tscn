@@ -1,0 +1,20 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://Scripts/World/target_dummy.gd" id="1_dummy"]
+[ext_resource type="Script" path="res://Scripts/World/target_dummy_visuals.gd" id="2_visuals"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dummy"]
+radius = 0.42
+height = 2.3
+
+[node name="TargetDummy" type="RigidBody3D"]
+mass = 60.0
+gravity_scale = 0.0
+can_sleep = false
+script = ExtResource("1_dummy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_dummy")
+
+[node name="Visuals" type="Node3D" parent="."]
+script = ExtResource("2_visuals")

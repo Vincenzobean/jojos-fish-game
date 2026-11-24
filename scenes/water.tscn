@@ -1,0 +1,16 @@
+[gd_scene format=3]
+
+[ext_resource type="Shader" path="res://assets/water/water.gdshader" id="1_shader"]
+[ext_resource type="Script" path="res://Scripts/World/water.gd" id="2_script"]
+[ext_resource type="Script" path="res://Scripts/World/water_visuals.gd" id="3_visuals"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_water"]
+shader = ExtResource("1_shader")
+
+[node name="Water" type="MeshInstance3D"]
+material_override = SubResource("ShaderMaterial_water")
+cast_shadow = 0
+script = ExtResource("2_script")
+
+[node name="Visuals" type="Node" parent="."]
+script = ExtResource("3_visuals")

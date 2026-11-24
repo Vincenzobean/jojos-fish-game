@@ -1,0 +1,31 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/stand_body.tscn" id="1_body"]
+[ext_resource type="Script" path="res://Scripts/Stands/Animation/Sets/mantis_shrimp_stand_animations.gd" id="2_animations"]
+[ext_resource type="Script" path="res://Scripts/Stands/Combat/Sets/mantis_shrimp_stand_moves.gd" id="3_moves"]
+[ext_resource type="Script" path="res://Scripts/Stands/Finisher/mantis_shrimp_stand_finisher.gd" id="4_finisher"]
+
+[sub_resource type="Resource" id="Resource_mantis_moves"]
+script = ExtResource("3_moves")
+
+[sub_resource type="Resource" id="Resource_mantis_animations"]
+script = ExtResource("2_animations")
+
+[sub_resource type="Resource" id="Resource_mantis_finisher"]
+script = ExtResource("4_finisher")
+
+[node name="MantisShrimpStand" instance=ExtResource("1_body")]
+metadata/summonable = false
+body_scale = 1.75
+animations = SubResource("Resource_mantis_animations")
+moves = SubResource("Resource_mantis_moves")
+max_health = 420.0
+finisher = SubResource("Resource_mantis_finisher")
+fly_speed_scale = 1.15
+damage_scale = 1.2
+damage_taken_scale = 0.9
+head_style = 4
+skin = Color(0.18, 0.6, 0.46, 1)
+definition = Color(0.07, 0.24, 0.27, 1)
+eyes = Color(0.35, 0.95, 1, 1)
+underside = Color(0.96, 0.36, 0.2, 1)

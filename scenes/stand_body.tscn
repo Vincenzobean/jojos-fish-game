@@ -1,0 +1,10 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://Scripts/Stands/stand_body.gd" id="1_body"]
+[ext_resource type="Script" path="res://Scripts/Stands/stand_body_visuals.gd" id="2_visuals"]
+
+[node name="StandBody" type="Node3D"]
+script = ExtResource("1_body")
+
+[node name="Visuals" type="Node" parent="."]
+script = ExtResource("2_visuals")

@@ -1,0 +1,11 @@
+Model Information:
+* title:	Fantasy bow
+* source:	https://sketchfab.com/3d-models/fantasy-bow-0acd23c8fb484fb9b87a914eceaf4e99
+* author:	aiva (https://sketchfab.com/aiva)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Fantasy bow" (https://sketchfab.com/3d-models/fantasy-bow-0acd23c8fb484fb9b87a914eceaf4e99) by aiva (https://sketchfab.com/aiva) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

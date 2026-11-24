@@ -1,0 +1,12 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://Scripts/UI/loading_screen.gd" id="1_screen"]
+[ext_resource type="Script" path="res://Scripts/UI/loading_screen_visuals.gd" id="2_visuals"]
+
+[node name="LoadingScreen" type="CanvasLayer"]
+process_mode = 3
+layer = 100
+script = ExtResource("1_screen")
+
+[node name="Visuals" type="Node" parent="."]
+script = ExtResource("2_visuals")

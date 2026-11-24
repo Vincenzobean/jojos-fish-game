@@ -1,0 +1,9 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://Scripts/Items/stand_arrow.gd" id="1_script"]
+[ext_resource type="PackedScene" uid="uid://dqml18byutc3j" path="res://assets/player/stand_arrow/scene.gltf" id="2_model"]
+
+[node name="StandArrow" type="Node3D"]
+script = ExtResource("1_script")
+
+[node name="Model" parent="." instance=ExtResource("2_model")]

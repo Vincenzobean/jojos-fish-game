@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://csle4h58rrqyj"
+path="res://.godot/imported/Reel in command.wav-327624dd157525e4167df74e5195635b.sample"
+
+[deps]
+
+source_file="res://assets/audio/puffertutorial/Reel in command.wav"
+dest_files=["res://.godot/imported/Reel in command.wav-327624dd157525e4167df74e5195635b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

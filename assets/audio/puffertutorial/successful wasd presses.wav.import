@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bg0ui80dw1kmw"
+path="res://.godot/imported/successful wasd presses.wav-7e3379efe9c5a55a459d81f7af1edf1f.sample"
+
+[deps]
+
+source_file="res://assets/audio/puffertutorial/successful wasd presses.wav"
+dest_files=["res://.godot/imported/successful wasd presses.wav-7e3379efe9c5a55a459d81f7af1edf1f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

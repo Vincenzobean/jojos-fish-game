@@ -1,0 +1,39 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://Scripts/Items/arrow_projectile.gd" id="1_script"]
+[ext_resource type="PackedScene" path="res://scenes/stand_arrow.tscn" id="2_model"]
+[ext_resource type="Script" path="res://Scripts/Water/buoyancy.gd" id="3_buoyancy"]
+[ext_resource type="Script" path="res://Scripts/Items/arrow_visuals.gd" id="4_visuals"]
+[ext_resource type="Texture2D" uid="uid://dlbw3elxc5lem" path="res://assets/image (7).png" id="5_pufferfish"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_arrow"]
+radius = 0.02
+height = 0.5
+
+[node name="ArrowProjectile" type="RigidBody3D"]
+script = ExtResource("1_script")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, -0.22)
+shape = SubResource("CapsuleShape3D_arrow")
+
+[node name="Model" parent="." instance=ExtResource("2_model")]
+transform = Transform3D(5, 0, 0, 0, 0, 5, 0, -5, 0, 0, 0, 0)
+
+[node name="Buoyancy" type="Node" parent="."]
+script = ExtResource("3_buoyancy")
+body_height = 0.1
+buoyancy_ratio = 0.85
+water_drag = 4.0
+
+[node name="Head" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.41)
+
+[node name="Pufferfish" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.07, -0.41)
+pixel_size = 0.001
+texture = ExtResource("5_pufferfish")
+
+[node name="Visuals" type="Node" parent="." node_paths=PackedStringArray("pufferfish")]
+script = ExtResource("4_visuals")
+pufferfish = NodePath("../Pufferfish")

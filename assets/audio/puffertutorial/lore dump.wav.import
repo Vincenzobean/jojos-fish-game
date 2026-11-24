@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cix84x65tbc1s"
+path="res://.godot/imported/lore dump.wav-1daf247d4f0d2e46f9b795d83571ab63.sample"
+
+[deps]
+
+source_file="res://assets/audio/puffertutorial/lore dump.wav"
+dest_files=["res://.godot/imported/lore dump.wav-1daf247d4f0d2e46f9b795d83571ab63.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

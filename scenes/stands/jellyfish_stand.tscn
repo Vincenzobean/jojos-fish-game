@@ -1,0 +1,36 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/stand_body.tscn" id="1_body"]
+[ext_resource type="Script" path="res://Scripts/Stands/Animation/Sets/jellyfish_stand_animations.gd" id="2_animations"]
+[ext_resource type="Script" path="res://Scripts/Stands/Combat/Sets/jellyfish_stand_moves.gd" id="3_moves"]
+[ext_resource type="Script" path="res://Scripts/Skills/jellyfish_stand_skill_tree.gd" id="4_skills"]
+[ext_resource type="Script" path="res://Scripts/Stands/Finisher/jellyfish_stand_finisher.gd" id="5_finisher"]
+
+[sub_resource type="Resource" id="Resource_jelly_moves"]
+script = ExtResource("3_moves")
+
+[sub_resource type="Resource" id="Resource_jelly_animations"]
+script = ExtResource("2_animations")
+
+[sub_resource type="Resource" id="Resource_jelly_skills"]
+script = ExtResource("4_skills")
+
+[sub_resource type="Resource" id="Resource_jelly_finisher"]
+script = ExtResource("5_finisher")
+
+[node name="JellyfishStand" instance=ExtResource("1_body")]
+body_scale = 1.6
+animations = SubResource("Resource_jelly_animations")
+moves = SubResource("Resource_jelly_moves")
+max_health = 100.0
+finisher = SubResource("Resource_jelly_finisher")
+skill_tree = SubResource("Resource_jelly_skills")
+fly_speed_scale = 1.1
+revives = 1
+revive_health = 0.3
+time_resist = true
+head_style = 6
+skin = Color(0.93, 0.92, 0.95, 1)
+definition = Color(0.78, 0.74, 0.8, 1)
+eyes = Color(0.95, 0.4, 0.2, 1)
+underside = Color(0.93, 0.33, 0.15, 1)

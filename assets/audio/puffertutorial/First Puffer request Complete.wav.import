@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dm57tkqspb636"
+path="res://.godot/imported/First Puffer request Complete.wav-34a32cf4e7fd1e8ab9f7075a2493d1ec.sample"
+
+[deps]
+
+source_file="res://assets/audio/puffertutorial/First Puffer request Complete.wav"
+dest_files=["res://.godot/imported/First Puffer request Complete.wav-34a32cf4e7fd1e8ab9f7075a2493d1ec.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

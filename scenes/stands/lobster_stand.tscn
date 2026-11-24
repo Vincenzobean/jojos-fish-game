@@ -1,0 +1,36 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/stand_body.tscn" id="1_body"]
+[ext_resource type="Script" path="res://Scripts/Stands/Animation/Sets/lobster_stand_animations.gd" id="2_animations"]
+[ext_resource type="Script" path="res://Scripts/Stands/Combat/Sets/lobster_stand_moves.gd" id="3_moves"]
+[ext_resource type="Script" path="res://Scripts/Skills/lobster_stand_skill_tree.gd" id="4_skills"]
+[ext_resource type="Script" path="res://Scripts/Stands/Finisher/lobster_stand_finisher.gd" id="5_finisher"]
+
+[sub_resource type="Resource" id="Resource_lobster_moves"]
+script = ExtResource("3_moves")
+
+[sub_resource type="Resource" id="Resource_lobster_animations"]
+script = ExtResource("2_animations")
+
+[sub_resource type="Resource" id="Resource_lobster_skills"]
+script = ExtResource("4_skills")
+
+[sub_resource type="Resource" id="Resource_lobster_finisher"]
+script = ExtResource("5_finisher")
+
+[node name="LobsterStand" instance=ExtResource("1_body")]
+body_scale = 1.8
+animations = SubResource("Resource_lobster_animations")
+moves = SubResource("Resource_lobster_moves")
+max_health = 160.0
+finisher = SubResource("Resource_lobster_finisher")
+skill_tree = SubResource("Resource_lobster_skills")
+fly_speed_scale = 0.8
+damage_taken_scale = 0.85
+block_reflect = 0.25
+molt_at = 0.25
+head_style = 5
+skin = Color(0.16, 0.3, 0.36, 1)
+definition = Color(0.07, 0.13, 0.16, 1)
+eyes = Color(0.04, 0.04, 0.05, 1)
+underside = Color(0.95, 0.5, 0.2, 1)
